@@ -17,12 +17,12 @@ jobs:
         with:
           node-version: "22"
 
-      - run: npm ci
+      - run: bun install
 
-      - run: npm run build
+      - run: bun run build
 
       - name: Deploy Storybook
         working-directory: ./packages/docs
-        run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
+        run: bun run deploy-storybook -- --ci --existing-output-dir=storybook-static
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
