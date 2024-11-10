@@ -12,17 +12,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          bun-version: latest
+          node-version: "22"
 
-      - run: bun config set registry https://registry.npmjs.org/
+      - run: npm ci
 
-      # run any `bun` or `bunx` command
-      - run: bun install
-      - run: bun index.ts
-      - run: bun run build
+      - run: npm run build
 
       - name: Deploy Storybook
         working-directory: ./packages/docs
