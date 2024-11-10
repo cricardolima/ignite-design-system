@@ -11,24 +11,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
 
-      - name: Install and Setup Bun
-        run: |
-          curl -fsSL https://bun.sh/install | bash
-          echo 'BUN_INSTALL=$HOME/.bun' >> $GITHUB_ENV
-          echo 'PATH=$BUN_INSTALL/bin:$PATH' >> $GITHUB_ENV
-
-      - name: Load Bun Environment
-        run: source $GITHUB_ENV
-
-      - name: Install Dependencies
-        run: bun install
-
-      - name: Build
-        run: bun run build
+      # run any `bun` or `bunx` command
+      - run: bun install
+      - run: bun index.ts
+      - run: bun run build
 
       - name: Deploy Storybook
         working-directory: ./packages/docs
-        run: bun run deploy-storybook -- --ci --existing-output-dir=storybook-static
+        run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
