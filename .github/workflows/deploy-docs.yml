@@ -15,12 +15,13 @@ jobs:
       - name: Install and Setup Bun
         run: |
           curl -fsSL https://bun.sh/install | bash
-          echo 'export BUN_INSTALL="$HOME/.bun"' >> $GITHUB_ENV
-          echo 'export PATH="$BUN_INSTALL/bin:$PATH"' >> $GITHUB_ENV
-          source $GITHUB_ENV
+          echo 'export BUN_INSTALL="$HOME/.bun"' >> $HOME/.bashrc
+          echo 'export PATH="$BUN_INSTALL/bin:$PATH"' >> $HOME/.bashrc
+          source $HOME/.bashrc
           bun install
 
-      - run: bun run build
+      - name: Build
+        run: bun run build
 
       - name: Deploy Storybook
         working-directory: ./packages/docs
