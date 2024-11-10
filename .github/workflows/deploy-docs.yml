@@ -17,6 +17,8 @@ jobs:
         with:
           bun-version: latest
 
+      - run: bun config set registry https://registry.npmjs.org/
+
       # run any `bun` or `bunx` command
       - run: bun install
       - run: bun index.ts
