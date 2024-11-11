@@ -1,5 +1,5 @@
 {
-  "name": "@ignite-ui/docs",
+  "name": "@cricardo-design-system/docs",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,10 +11,10 @@
     "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
-    "@ignite-ui/eslint-config": "*",
-    "@ignite-ui/react": "*",
-    "@ignite-ui/tokens": "*",
-    "@ignite-ui/ts-config": "*",
+    "@cricardo-design-system/eslint-config": "*",
+    "@cricardo-design-system/react": "*",
+    "@cricardo-design-system/tokens": "*",
+    "@cricardo-design-system/ts-config": "*",
     "@storybook/addon-a11y": "^8.4.2",
     "@storybook/addons": "^7.6.17",
     "@storybook/storybook-deployer": "^2.8.16",

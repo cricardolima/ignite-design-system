@@ -1,5 +1,5 @@
 {
-  "name": "@ignite-ui/react",
+  "name": "@cricardo-design-system/react",
   "version": "1.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -15,9 +15,9 @@
   "license": "MIT",
   "description": "",
   "devDependencies": {
-    "@ignite-ui/eslint-config": "*",
-    "@ignite-ui/tokens": "*",
-    "@ignite-ui/ts-config": "*",
+    "@cricardo-design-system/eslint-config": "*",
+    "@cricardo-design-system/tokens": "*",
+    "@cricardo-design-system/ts-config": "*",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "react": "^18.3.1",
